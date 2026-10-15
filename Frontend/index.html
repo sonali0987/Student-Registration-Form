@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Registration</h1>
+
+    <form id="studentForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required>
+
+      
+<label for="password">Password</label>
+<input
+  type="password"
+  id="password"
+  name="password"
+  minlength="8"
+  maxlength="8"
+  required
+  placeholder="Enter your password"
+  aria-describedby="passwordConditions"
+>
+
+<div id="passwordConditions" class="conditions" hidden>
+  <p id="length" class="invalid">✗ Exactly 8 characters</p>
+  <p id="uppercase" class="invalid">✗ At least one uppercase letter (A-Z)</p>
+  <p id="digit" class="invalid">✗ At least one digit (0-9)</p>
+  <p id="special" class="invalid">✗ At least one special character (@#$!)</p>
+  <p id="allowed" class="invalid">✗ No spaces or unsupported characters</p>
+</div>
+
+
+      <label for="phone">Phone Number</label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{10}"
+        title="Phone number must contain exactly 10 digits."
+        minlength="10"
+        maxlength="10"
+        inputmode="numeric"
+        required
+      >
+
+      <button type="submit">Register</button>
+      <p id="message"></p>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
